@@ -11,7 +11,7 @@ public class SocketConfig implements WebSocketMessageBrokerConfigurer {
     @Override
     public void registerStompEndpoints(StompEndpointRegistry registry) {
         registry.addEndpoint("/socket")
-                .setAllowedOrigins("http://localhost:9999") // TODO: Change this to the frontend URL
+                .setAllowedOrigins("http://localhost:3006") // TODO: Change this to the frontend URL
                 .withSockJS();
     }
 

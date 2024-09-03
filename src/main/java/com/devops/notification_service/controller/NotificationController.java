@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.security.Principal;
 import java.util.List;
 import java.util.UUID;
 
@@ -20,8 +21,8 @@ public class NotificationController {
 
     @GetMapping()
     // TODO: @HasRole("GUEST,HOST")
-    public List<Notification> getMyNotifications(UUID userId) {
-        return notificationService.getMyNotifications(userId);
+    public List<Notification> getMyNotifications(Principal principal) {
+        return notificationService.getMyNotifications(UUID.fromString(principal.getName()));
     }
 
     @GetMapping("/test/{id}")
