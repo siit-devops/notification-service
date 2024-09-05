@@ -19,9 +19,8 @@ import java.util.UUID;
 @Document
 public class Notification implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
     @Field("_id")
-    private UUID id;
+    private String id;
     private NotificationType notificationType;
     private UUID subjectId;
     private UUID receiverId;
